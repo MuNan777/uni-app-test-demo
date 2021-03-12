@@ -29,7 +29,13 @@ export default Vue.extend({
   },
   onReachBottom() {
     this.page++;
-    this.getMsgList();
+    uni.showLoading({
+			title: '请稍等...',
+      mask: true,
+    });
+    this.getMsgList().finally(() => {
+      uni.hideLoading();
+    });
   },
   methods: {
     getMsgList() {
