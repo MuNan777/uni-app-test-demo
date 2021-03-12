@@ -1,16 +1,61 @@
+//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      // uni-ui 规则如下配置
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      "^c-(.*)": "@/components/c-$1.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "Home"
+      }
+    },
+    {
+      "path": "pages/science/science",
+      "style": {
+        "navigationBarTitleText": "Science",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/comic/comic",
+      "style": {
+        "navigationBarTitleText": "Comic",
+        "enablePullDownRefresh": true
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "Home",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabBarIco/card.png",
+        "selectedIconPath": "static/tabBarIco/card_act.png"
+      },
+      {
+        "text": "Science",
+        "pagePath": "pages/science/science",
+        "iconPath": "static/tabBarIco/science.png",
+        "selectedIconPath": "static/tabBarIco/science_act.png"
+      },
+      {
+        "text": "Comic",
+        "pagePath": "pages/comic/comic",
+        "iconPath": "static/tabBarIco/comic.png",
+        "selectedIconPath": "static/tabBarIco/comic_act.png"
+      }
+    ]
+  }
 }
